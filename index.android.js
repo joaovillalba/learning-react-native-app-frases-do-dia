@@ -1,5 +1,5 @@
 import React from 'react';
-import { View, Text, AppRegistry, TouchableOpacity } from 'react-native';
+import { View, Text, AppRegistry, TouchableOpacity, Image } from 'react-native';
 
 const Estilos = {
   textStyle: {
@@ -35,12 +35,13 @@ const Estilos = {
     justifyContent: 'center',
     //alignItems: 'center',
     flexDirection: 'column',
+    paddingTop: 100
   },
   viewStyle1: {        
     flex: 5,
     justifyContent: 'flex-end',
     alignItems: 'center',
-    flexDirection: 'column'
+    flexDirection: 'column'    
   },
   viewStyle2: {        
     flex: 5,
@@ -61,15 +62,32 @@ const Estilos = {
     fontWeight: 'bold',
     padding: 10,
     alignSelf: 'center' 
+  },
+  imageStyle: {
+    justifyContent: 'center',
+    width: 200, 
+    height: 200,
+    alignItems: 'center'
   }
 };
 
 const App = () => {
-  const { textStyle, textStyle2, textStyle3, viewStyle, viewStyle1, viewStyle2, buttonStyle, textoBotao } = Estilos;  
-  
+  const { textStyle, 
+          textStyle2, 
+          textStyle3, 
+          viewStyle, 
+          viewStyle1, 
+          viewStyle2, 
+          buttonStyle, 
+          textoBotao,
+          imageStyle } = Estilos;  
+
   return (
     <View style={viewStyle}>
       <View style={viewStyle1}>
+        <Image style={imageStyle} source={require('./img/uvas.png')} >
+          <Text>Legenda para a foto</Text>
+        </Image>
         <Text style={textStyle} >Frases do Dia</Text>
         <Text style={textStyle2} >Sua inspiração diária</Text>
       </View>
