@@ -1,5 +1,5 @@
 import React from 'react';
-import { View, Text, AppRegistry, Button } from 'react-native';
+import { View, Text, AppRegistry, TouchableOpacity } from 'react-native';
 
 const Estilos = {
   textStyle: {
@@ -47,11 +47,25 @@ const Estilos = {
     justifyContent: 'space-around',
     alignItems: 'center',
     flexDirection: 'row'
-  } 
+  },
+  buttonStyle: {
+    backgroundColor: '#48BBEC',
+    borderRadius: 5,
+    shadowColor: '#000',
+    shadowOffset: { width: 0, height: 2 },
+    shadowOpacity: 1
+  },
+  textoBotao: {
+    color: '#fff',
+    fontSize: 16,
+    fontWeight: 'bold',
+    padding: 10,
+    alignSelf: 'center' 
+  }
 };
 
 const App = () => {
-  const { textStyle, textStyle2, textStyle3, viewStyle, viewStyle1, viewStyle2 } = Estilos;
+  const { textStyle, textStyle2, textStyle3, viewStyle, viewStyle1, viewStyle2, buttonStyle, textoBotao } = Estilos;  
   
   return (
     <View style={viewStyle}>
@@ -59,9 +73,10 @@ const App = () => {
         <Text style={textStyle} >Frases do Dia</Text>
         <Text style={textStyle2} >Sua inspiração diária</Text>
       </View>
-      <View style={viewStyle2}>
-        <Button title='Cadastre-se' onPress={() => alert('Cadastrou-se')} />
-        <Button title='Login' onPress={() => alert('Logou-se')} />          
+      <View style={viewStyle2}>        
+        <TouchableOpacity style={buttonStyle}>
+          <Text style={textoBotao}>Clique aqui</Text>
+        </TouchableOpacity>
       </View>
       <Text style={textStyle3}>Versão: 1.00</Text>
     </View>
